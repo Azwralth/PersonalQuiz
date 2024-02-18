@@ -34,11 +34,8 @@ final class ResultViewController: UIViewController {
     }
     
     private func getAnimal() -> Animal? {
-        var animalCounts: [Animal: Int] = [:]
-        
-        for answerChoose in answersChosen {
-            let animal = answerChoose.animal
-            animalCounts[animal, default: 0] += 1
+        let animalCounts = answersChosen.reduce(into: [:]) { count, answer in
+            count[answer.animal, default: 0] += 1
         }
         
         return animalCounts.max(by: { $0.value < $1.value })?.key

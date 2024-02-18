@@ -17,9 +17,9 @@ final class ResultViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let mostChoseAnimal = getAnimal() {
-            animalLabel.text = String(mostChoseAnimal.rawValue)
-            definitionAnimalLabel.text = mostChoseAnimal.definition
+        if let mostChosenAnimal = getAnimal() {
+            animalLabel.text = String(mostChosenAnimal.rawValue)
+            definitionAnimalLabel.text = mostChosenAnimal.definition
         }
         
         navigationItem.hidesBackButton = true
